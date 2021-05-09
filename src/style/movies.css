@@ -1,0 +1,32 @@
+.movieList {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.movie {
+  height: 440px;
+  width: 300px;
+  margin: 10px auto;
+  text-align: center;
+  border-radius: 2px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  position: relative;
+  background-color: gray;
+}
+.movie img {
+  width: 180px;
+  height: 300px;
+  margin-bottom: 15px;
+  margin-top: 8px;
+  border-radius: 5px;
+}
+.movie div {
+  margin-bottom: 10px;
+}
+.movieListContent {
+  width: 70%;
+}
+.contentDisplay {
+  display: flex;
+  flex-direction: row;
+}

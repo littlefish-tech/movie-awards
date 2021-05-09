@@ -1,0 +1,24 @@
+.clearBtn {
+  border: 2px solid #0099cc;
+  border-radius: 6px;
+  text-transform: uppercase;
+  font-size: 16px;
+  padding: 10px 32px;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s;
+  /* Safari */
+  transition-duration: 0.4s;
+  position: absolute;
+  bottom: 0;
+  right: 85px;
+}
+.clearBtn:hover {
+  background-color: #008cba;
+  color: white;
+}
+.clearBtn:disabled {
+  pointer-events: none;
+}
