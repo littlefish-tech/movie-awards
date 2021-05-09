@@ -4,7 +4,7 @@ import RemoveBtn from "./RemoveBtn";
 
 export default function NominateList(props: {
   count: number;
-  removeMovie: () => void;
+  removeMovie: any;
 }) {
   const [saveMovies, setSaveMovie] = useState<[]>([]);
   useEffect(() => {
@@ -25,7 +25,7 @@ export default function NominateList(props: {
             <img src={movie.Poster} />
             <div>Title: {movie.Title}</div>
             <div>Year: {movie.Year}</div>
-            <RemoveBtn removeMovie={props.removeMovie} />
+            <RemoveBtn removeMovie={() => props.removeMovie(movie.imdbID)} />
           </div>
         ))}
     </div>

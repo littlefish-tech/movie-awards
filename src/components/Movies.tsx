@@ -26,6 +26,7 @@ export default function Movies(props: {
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
+    console.log("at here ~~~");
     localStorage.setItem("movie", JSON.stringify(savedMovies));
     localStorage.setItem("id", JSON.stringify(strId));
     setCount(count + 1);
@@ -43,13 +44,14 @@ export default function Movies(props: {
     }
   }
 
-  function removeMovie() {
+  function removeMovie(id: string) {
     console.log("clicked");
-    savedMovies.map((item, i) => {
-      savedMovies.splice(i, 1);
-      setSavedMovies(savedMovies);
-      console.log(savedMovies);
-    });
+    console.log(id);
+    let newList = savedMovies.filter((item: movie) => item.imdbID !== id);
+    strId.filter((itemId: string) => itemId !== id);
+    setSavedMovies(newList);
+    let newIdStr = strId.filter((itemId: string) => itemId !== id);
+    setStrId(newIdStr);
   }
 
   return (
