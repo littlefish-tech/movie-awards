@@ -1,0 +1,13 @@
+/* scroll to top styling give credit to https://codesandbox.io/s/scroll-to-top-react-component-coderomeos-forked-msdn3?from-embed=&file=/src/ScrollToTop.js */
+
+.scrollToTop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  animation: fadeIn 700ms ease-in-out 1s both;
+  cursor: pointer;
+}
+.scrollToTop img {
+  height: 40px;
+  width: 40px;
+}
