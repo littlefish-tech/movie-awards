@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import NominateBtn from "./NominateBtn";
 import NominateList from "./NominateList";
+import Modal from "./Modal";
+
 import "../style/nominateList.css";
 import "../style/movies.css";
 
@@ -24,6 +26,7 @@ export default function Movies(props: {
   const [savedMovies, setSavedMovies] = useState<movie[]>(nominatedMovies);
   const [strId, setStrId] = useState<string[]>(sId);
   const [count, setCount] = useState<number>(0);
+  const [showModal, setShowModal] = useState<boolean>(false);
 
   useEffect(() => {
     localStorage.setItem("movie", JSON.stringify(savedMovies));
@@ -36,7 +39,7 @@ export default function Movies(props: {
       (movieObj: movie) => movieObj.imdbID === id
     );
     if (savedMovies.length === 5) {
-      return <div>`${alert("You can nominate up to 5 movies")}`</div>;
+      setShowModal(true);
     }
     if (strId.indexOf(id) === -1 && savedMovies.length < 5) {
       let saved = [...savedMovies, m[0]];
@@ -55,6 +58,7 @@ export default function Movies(props: {
 
   return (
     <div className="contentDisplay">
+      {showModal && <Modal onClick={() => setShowModal(false)} />}
       <div className="movieListContent">
         {props.movieInput && props.showName && (
           <div className="listText">Results for "{props.showName}"</div>
@@ -67,8 +71,6 @@ export default function Movies(props: {
                 key={i}
                 style={{
                   background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${movie.Poster})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
                 }}
               >
                 {/* <img src={movie.Poster} /> */}
