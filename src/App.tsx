@@ -17,7 +17,7 @@ function App() {
       return;
     }
     try {
-      await fetch(`http://www.omdbapi.com/?apikey=${OMDbAPI}&s=${movieInput}`)
+      await fetch(`https://www.omdbapi.com/?apikey=${OMDbAPI}&s=${movieInput}`)
         .then((response) => response.json())
         .then((data) => {
           let movieArr = data.Search;
