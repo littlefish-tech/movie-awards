@@ -35,8 +35,10 @@ export default function Movies(props: {
     let m: movie[] = props.movies.filter(
       (movieObj: movie) => movieObj.imdbID === id
     );
-
-    if (strId.indexOf(id) === -1) {
+    if (savedMovies.length === 5) {
+      return <div>`${alert("You can nominate up to 5 movies")}`</div>;
+    }
+    if (strId.indexOf(id) === -1 && savedMovies.length < 5) {
       let saved = [...savedMovies, m[0]];
       setSavedMovies(saved);
       setStrId([...strId, id]);
