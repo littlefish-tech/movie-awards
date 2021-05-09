@@ -70,29 +70,8 @@ export default function Movies(props: {
                 }}
               >
                 {/* <img src={movie.Poster} /> */}
-                <div
-                  style={{
-                    color: "white",
-                    fontWeight: "bold",
-                    marginTop: "20px",
-                    textAlign: "left",
-                    marginLeft: "10px",
-                    fontSize: "20px",
-                  }}
-                >
-                  {movie.Title}
-                </div>
-                <div
-                  style={{
-                    color: "white",
-                    fontWeight: "bold",
-                    marginTop: "18px",
-                    textAlign: "left",
-                    marginLeft: "10px",
-                  }}
-                >
-                  Year: {movie.Year}
-                </div>
+                <div className="titleStyle">{movie.Title}</div>
+                <div>Year: {movie.Year}</div>
                 <NominateBtn
                   onClick={() => nomineeMovie(movie.imdbID)}
                   isClicked={strId.indexOf(movie.imdbID) !== -1}

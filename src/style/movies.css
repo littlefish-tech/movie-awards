@@ -6,26 +6,36 @@
 .movie {
   height: 350px;
   width: 220px;
-  margin: 10px 3%;
+  margin: 10px auto;
   text-align: center;
-  border-radius: 2px;
+  border-radius: 8px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
   /* background-color: gray; */
   transition: transform 0.5s;
+  border: 2px solid white;
 }
 .movie:hover {
   transform: scale(1.05);
 }
-.movie img {
+.titleStyle {
+  font-size: 20px;
+}
+
+/* .movie img {
   width: 140px;
   height: 200px;
   margin-bottom: 15px;
   margin-top: 8px;
   border-radius: 5px;
-}
+} */
 .movie div {
   margin-bottom: 10px;
+  color: white;
+  font-weight: bold;
+  margin-top: 20px;
+  text-align: left;
+  margin-left: 10px;
 }
 .movieListContent {
   width: 70%;
