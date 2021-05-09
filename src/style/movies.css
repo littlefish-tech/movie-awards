@@ -62,3 +62,17 @@
     grid-template-columns: auto auto;
   }
 }
+
+@media screen and (max-width: 700px) {
+  .movieList {
+    display: flex;
+    flex-direction: column;
+  }
+  .movieListContent {
+    width: 50%;
+  }
+  .movie {
+    width: 250px;
+    height: 180px;
+  }
+}
