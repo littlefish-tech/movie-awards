@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { movie } from "./Movies";
 import RemoveBtn from "./RemoveBtn";
+import "../style/nominateList.css";
 
 export default function NominateList(props: {
   count: number;
@@ -8,7 +9,6 @@ export default function NominateList(props: {
 }) {
   const [saveMovies, setSaveMovie] = useState<[]>([]);
   useEffect(() => {
-    console.log("nomlist");
     saveMov();
   }, [props.count]);
   function saveMov() {
@@ -18,16 +18,23 @@ export default function NominateList(props: {
   }
 
   return (
-    <div>
-      {saveMovies.length > 0 &&
-        saveMovies.map((movie: movie, i: number) => (
-          <div key={i}>
-            <img src={movie.Poster} />
-            <div>Title: {movie.Title}</div>
-            <div>Year: {movie.Year}</div>
-            <RemoveBtn removeMovie={() => props.removeMovie(movie.imdbID)} />
-          </div>
-        ))}
+    <div className="mList">
+      <div>Nominate Movie List</div>
+      <div>
+        {saveMovies.length > 0 &&
+          saveMovies.map((movie: movie, i: number) => (
+            <div key={i} className="nominateMovie">
+              <img src={movie.Poster} />
+              <div className="nMovieContent">
+                <div>Title: {movie.Title}</div>
+                <div>Year: {movie.Year}</div>
+                <RemoveBtn
+                  removeMovie={() => props.removeMovie(movie.imdbID)}
+                />
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 }

@@ -4,18 +4,22 @@
 }
 
 .movie {
-  height: 440px;
-  width: 300px;
-  margin: 10px auto;
+  height: 350px;
+  width: 220px;
+  margin: 10px 3%;
   text-align: center;
   border-radius: 2px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   position: relative;
-  background-color: gray;
+  /* background-color: gray; */
+  transition: transform 0.5s;
+}
+.movie:hover {
+  transform: scale(1.05);
 }
 .movie img {
-  width: 180px;
-  height: 300px;
+  width: 140px;
+  height: 200px;
   margin-bottom: 15px;
   margin-top: 8px;
   border-radius: 5px;

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import InputSearch from "./components/InputSearch";
 import Movies, { movie } from "./components/Movies";
 import ScrollToTop from "./components/ScrollToTop";
-// import NominateList from "./components/NominateList";
+import Title from "./components/Title";
 import "./App.css";
 
 const OMDbAPI = process.env.REACT_APP_OMDb_API_KEY;
@@ -12,9 +12,10 @@ function App() {
   const [movieInput, setMovieInput] = useState<string>("");
   const [showName, setShowName] = useState<string>("");
 
-  console.log(movieInput);
-
   async function searchMovies() {
+    if (movieInput.trim() === "") {
+      return;
+    }
     try {
       await fetch(`http://www.omdbapi.com/?apikey=${OMDbAPI}&s=${movieInput}`)
         .then((response) => response.json())
@@ -31,11 +32,14 @@ function App() {
 
   return (
     <div className="App">
-      <InputSearch
-        onChange={(e: any) => setMovieInput(e.target.value)}
-        onClick={searchMovies}
-      />
-      <section>
+      <Title />
+      <div>
+        <InputSearch
+          onChange={(e: any) => setMovieInput(e.target.value)}
+          onClick={searchMovies}
+        />
+      </div>
+      <div>
         <Movies
           movies={movies}
           movieInput={movieInput}
@@ -43,7 +47,7 @@ function App() {
           showName={showName}
         />
         {/* <NominateList /> */}
-      </section>
+      </div>
       <ScrollToTop />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import NominateBtn from "./NominateBtn";
 import NominateList from "./NominateList";
-
+import "../style/nominateList.css";
 import "../style/movies.css";
 
 export interface movie {
@@ -60,10 +60,39 @@ export default function Movies(props: {
         <div className="movieList">
           {props.movies ? (
             props.movies.map((movie: movie, i) => (
-              <div className="movie" key={i}>
-                <img src={movie.Poster} />
-                <div key={i}>Title: {movie.Title}</div>
-                <div>Year: {movie.Year}</div>
+              <div
+                className="movie"
+                key={i}
+                style={{
+                  background: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),url(${movie.Poster})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center",
+                }}
+              >
+                {/* <img src={movie.Poster} /> */}
+                <div
+                  style={{
+                    color: "white",
+                    fontWeight: "bold",
+                    marginTop: "20px",
+                    textAlign: "left",
+                    marginLeft: "10px",
+                    fontSize: "20px",
+                  }}
+                >
+                  {movie.Title}
+                </div>
+                <div
+                  style={{
+                    color: "white",
+                    fontWeight: "bold",
+                    marginTop: "18px",
+                    textAlign: "left",
+                    marginLeft: "10px",
+                  }}
+                >
+                  Year: {movie.Year}
+                </div>
                 <NominateBtn
                   onClick={() => nomineeMovie(movie.imdbID)}
                   isClicked={strId.indexOf(movie.imdbID) !== -1}
@@ -75,7 +104,7 @@ export default function Movies(props: {
           )}
         </div>
       </div>
-      <div>
+      <div className="nominateList">
         <NominateList count={count} removeMovie={removeMovie} />
       </div>
     </div>

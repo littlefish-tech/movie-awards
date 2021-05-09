@@ -10,6 +10,8 @@ body::-webkit-scrollbar {
 body {
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
+  background: url("./asset/images/background-img.jpg"); /* photo from https://unsplash.com/s/photos/movie */
+  background-size: cover;
 }
 
 .App-logo {
