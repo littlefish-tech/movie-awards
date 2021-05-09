@@ -26,7 +26,6 @@ export default function Movies(props: {
   const [count, setCount] = useState<number>(0);
 
   useEffect(() => {
-    console.log("at here ~~~");
     localStorage.setItem("movie", JSON.stringify(savedMovies));
     localStorage.setItem("id", JSON.stringify(strId));
     setCount(count + 1);
@@ -45,8 +44,6 @@ export default function Movies(props: {
   }
 
   function removeMovie(id: string) {
-    console.log("clicked");
-    console.log(id);
     let newList = savedMovies.filter((item: movie) => item.imdbID !== id);
     strId.filter((itemId: string) => itemId !== id);
     setSavedMovies(newList);
@@ -61,17 +58,21 @@ export default function Movies(props: {
           <div>Results for "{props.showName}"</div>
         )}
         <div className="movieList">
-          {props.movies.map((movie: movie, i) => (
-            <div className="movie" key={i}>
-              <img src={movie.Poster} />
-              <div key={i}>Title: {movie.Title}</div>
-              <div>Year: {movie.Year}</div>
-              <NominateBtn
-                onClick={() => nomineeMovie(movie.imdbID)}
-                isClicked={strId.indexOf(movie.imdbID) !== -1}
-              />
-            </div>
-          ))}
+          {props.movies ? (
+            props.movies.map((movie: movie, i) => (
+              <div className="movie" key={i}>
+                <img src={movie.Poster} />
+                <div key={i}>Title: {movie.Title}</div>
+                <div>Year: {movie.Year}</div>
+                <NominateBtn
+                  onClick={() => nomineeMovie(movie.imdbID)}
+                  isClicked={strId.indexOf(movie.imdbID) !== -1}
+                />
+              </div>
+            ))
+          ) : (
+            <div>No result display</div>
+          )}
         </div>
       </div>
       <div>
