@@ -1,4 +1,4 @@
-.clearBtn {
+.nominateBtn {
   border: 2px solid #0099cc;
   border-radius: 6px;
   text-transform: uppercase;
@@ -15,11 +15,11 @@
   bottom: 10px;
   right: 60px;
 }
-.clearBtn:hover {
+.nominateBtn:hover {
   background-color: #008cba;
   color: white;
 }
-.clearBtn:disabled {
+.nominateBtn:disabled {
   pointer-events: none;
   border: 2px solid black;
 }

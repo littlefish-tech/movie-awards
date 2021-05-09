@@ -1,5 +1,5 @@
 import React from "react";
-import "../style/clearBtn.css";
+import "../style/nominateBtn.css";
 
 export default function NominateBtn(props: {
   onClick: any;
@@ -7,7 +7,7 @@ export default function NominateBtn(props: {
 }) {
   return (
     <button
-      className="clearBtn"
+      className="nominateBtn"
       onClick={props.onClick}
       disabled={props.isClicked}
     >
