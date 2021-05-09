@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { movie } from "./Movies";
 import RemoveBtn from "./RemoveBtn";
 import "../style/nominateList.css";
+import "../style/movies.css";
 
 export default function NominateList(props: {
   count: number;
@@ -19,7 +20,7 @@ export default function NominateList(props: {
 
   return (
     <div className="mList">
-      <div>Nominate Movie List</div>
+      <div className="listText">Nomintations</div>
       <div>
         {saveMovies.length > 0 &&
           saveMovies.map((movie: movie, i: number) => (

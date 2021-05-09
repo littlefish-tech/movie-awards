@@ -13,7 +13,9 @@
   flex-direction: row;
   margin: 10px auto;
   border-bottom-style: groove;
-  padding: 5px 3px;
+  padding: 5px 5px;
+  border: 3px solid white;
+  border-radius: 5px;
 }
 
 .nominateMovie:hover {
@@ -25,8 +27,30 @@
 }
 
 .nominateMovie div div {
-  font-size: 12px;
+  font-size: 15px;
   font-family: Arial, Helvetica, sans-serif;
   margin: 5px 8px;
   text-align: left;
+  font-weight: bold;
+  color: white;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+/* remove button styling */
+.rBtn {
+  float: left;
+  margin-left: 8px;
+  background-color: #f4511e;
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  font-size: 14px;
+  opacity: 0.6;
+  transition: 0.3s;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 8px;
+}
+.rBtn:hover {
+  opacity: 1;
 }

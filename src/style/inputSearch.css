@@ -1,7 +1,9 @@
+/* input styling give to https://codepen.io/zFunx/pen/XRyqvx */
+
 input[type="text"] {
   width: 100%;
   border: 2px solid #aaa;
-  border-radius: 4px;
+  border-radius: 30px;
   margin: 8px 0;
   outline: none;
   padding: 8px;
@@ -10,14 +12,14 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-  border-color: dodgerBlue;
-  box-shadow: 0 0 8px 0 dodgerBlue;
+  border-color: teal;
+  box-shadow: 0 0 8px 0 teal;
 }
 
 .searchForm input[type="text"] {
-  padding-left: 40px;
+  padding-left: 50px;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
+  font-size: 25px;
 }
 
 .searchForm {
@@ -37,10 +39,11 @@ input[type="text"]:focus {
   cursor: pointer;
   margin-left: 8px;
   margin-top: 2px;
+  font-size: 25px;
 }
 
 .searchForm input[type="text"]:focus + .searchIcon {
-  color: dodgerBlue;
+  color: teal;
 }
 
 /* .searchForm .inputIconBg .searchIcon {

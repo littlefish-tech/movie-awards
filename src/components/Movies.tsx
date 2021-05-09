@@ -55,7 +55,7 @@ export default function Movies(props: {
     <div className="contentDisplay">
       <div className="movieListContent">
         {props.movieInput && props.showName && (
-          <div>Results for "{props.showName}"</div>
+          <div className="listText">Results for "{props.showName}"</div>
         )}
         <div className="movieList">
           {props.movies ? (
