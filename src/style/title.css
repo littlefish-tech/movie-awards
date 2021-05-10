@@ -13,3 +13,8 @@
     0 12px 0 #181818, 0 13px 0 #161616, 0 14px 0 #141414, 0 15px 0 #121212,
     0 22px 30px rgba(0, 0, 0, 0.9);
 }
+@media screen and (max-width: 700px) {
+  .title {
+    font-size: 50px;
+  }
+}
