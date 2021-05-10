@@ -20,7 +20,7 @@ export default function NominateList(props: {
 
   return (
     <div className="mList">
-      <div className="listText">Nomintations</div>
+      <div className="listText">Nominations</div>
       <div>
         {saveMovies.length > 0 &&
           saveMovies.map((movie: movie, i: number) => (
